@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel=""
+</head>
+<body>
+    <div>
+        <label for="txtPromesaResolve">Promesa Resuelta</label>
+        <input type="text" id="txtPromesaResolve">
+        <button id="btnCumple" onclick="miFuncion()">Haz clic</button>
+        <br>
+        <label for="txtPromesaReject">Promesa Rechazada</label>
+        <input type="text" id="txtPromesaReject">
+    </div>
+    <script>
+        const txtPromesaResolve = document.getElementById("txtPromesaResolve");
+        const btnCumple = document.getElementById("btnCumple");
+
+        let promesa = new Promise(function(resolve, reject){
+            setTimeout(() =>
+                reject("Promesa resuelta correctamente"),3000)                
+        });
+        btnCumple.addEventListener(click,function(){
+        promesa.then(
+            result => txtPromesaResolve.value = result,
+            error => alert("Error")
+
+        )
+        });
+        
+    </script>
+    
+</body>
+</html>

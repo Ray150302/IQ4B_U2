@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="txtDividendo">Dividendo</label>
+      <input type="text" id="txtDividendo" />
+      <br />
+      <label for="txtDivisor">Divisor</label>
+      <input type="text" id="txtDivisor" />
+      <br />
+      <button id="btnPromesa">Confirmacion</button>
+
+      <!-- <label for="txtPromesaResolve">Promesa Resuelta</label>
+        <input type="text" id="txtPromesaResolve">
+        <button id="btnCumple" onclick="miFuncion()">Haz clic</button>
+        <br>
+        <label for="txtPromesaReject">Promesa Rechazada</label>
+        <input type="text" id="txtPromesaReject"> -->
+    </div>
+
+    <script>
+
+        const txtDivisor = document.getElementById("txtDivisor");
+        const btnPromesa = document.getElementById("btnPromesa");
+    //   const txtPromesaResolve = document.getElementById("txtPromesaResolve");
+    //   const btnCumple = document.getElementById("btnCumple");
+
+        function hacerPromesa(txtDivisor){
+            return new Promise((resolve,reject)=>{
+                if(txtDivisor == 0){
+                    resolve("No Se puede hacer");
+                }else {
+                    
+                        reject("Si sirve :3");
+
+
+                }
+            })
+        }
+
+            btnPromesa.addEventListener("click",()=>{
+
+                hacerPromesa(txtDivisor).
+                then(
+                result =>{
+                    alert(result);
+                });
+                        });
+    //   let promesa = new Promise(function (resolve, reject) {
+    //     setTimeout(() => reject("Promesa resuelta correctamente"), 3000);
+    //   });
+
+    //   promesa.then(
+    //     (result) => (txtPromesaResolve.value = result),
+    //     (error) => alert("Error")
+    //   );
+    </script>
+  </body>
+</html>
