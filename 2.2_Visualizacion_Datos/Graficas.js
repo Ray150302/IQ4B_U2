@@ -2,7 +2,7 @@ let data = {
   labels: ["ya comieron", "no han comido", "Indiferente"],
   datasets: [
     {
-      label: "Lenguajes de programación",
+      label: "Genero",
       data: [10, 66, 25],
       backgroundColor: "rgba(125, 99, 132, 0.2)",
       borderColor: "rgb(255, 99, 132)",
@@ -45,10 +45,10 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
   data.datasets.push({
     label: serie,
     data: [20, 25, 30],
-    backgroundColor: "rgba(226, 99, 132, 0.2)",
+    backgroundColor: "rgba(15, 99, 132, 0.2)",
     borderColor: "rgb(255, 99, 132)",
     borderWidth: 1,
   });
-
+    
   chart.update();
 });
